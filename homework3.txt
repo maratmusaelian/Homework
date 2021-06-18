@@ -1,0 +1,83 @@
+//Ex1
+
+function odd(num, res = 0){
+if(res > 0){
+  return 'false'
+}else if(num % 10 === 0 && res = 0){
+  return 'true'
+}
+
+let last = num % 10
+num = (num - last)/10
+if(last % 2 === 0){
+  res += last
+}
+    return odd(num, res);
+}
+
+
+//Ex2
+
+function minpos(arr){
+  for(let i = 0; i < arr.length; i++){
+    if(arr[i] < 0){
+     arr.splice(arr.indexOf(arr[i]),1)
+     i--
+    }
+  }
+ if(arr.length === 0){
+   return '-1'
+ }
+
+  let  minpos = arr[0]
+  for(let i of arr)
+    if(arr[i] < minpos){
+      minpos = arr[i]
+    }
+    return minpos;
+  }
+
+
+//ex3
+
+
+function ex(arr, a=arr[1]){
+  for(let i = 0; i < arr.length-1; i++){
+    if(arr[i] > a){
+      return (arr.indexOf(arr[i]))
+    }else{
+     a++
+    }
+  
+  }
+}
+
+
+
+//ex4
+
+function arr (arr){
+arr.splice(0,1);
+return arr;
+}
+
+
+//ex5 
+
+function reduce(arr,num){
+let count = 0
+
+for(let i = 0; i < arr.length-1; i++ ){
+  if(count !== num && num < 0){
+    arr.unshift(arr.pop())
+    count--
+    i--
+   }else if(count !== num && num > 0){
+    arr.push(arr[i])
+    arr.shift(arr[i])
+    count++;
+    i--
+   }
+  }
+  return arr;
+}
